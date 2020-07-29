@@ -17,16 +17,14 @@ export function calculate(calculator, buttonName) {
     case '8':
     case '9':
     case '0':
-      if(newCalc.next == null)
-        newCalc.next = buttonName;
-      else
-        newCalc.next += buttonName;
+      if (newCalc.next == null) newCalc.next = buttonName;
+      else newCalc.next += buttonName;
       break;
     case '+':
     case '-':
     case 'x':
     case '÷':
-      if(newCalc.total == null) {
+      if (newCalc.total == null) {
         newCalc.total = newCalc.next;
       } else {
         newCalc.total = operate(newCalc.next, newCalc.total, newCalc.operation);

@@ -4,11 +4,11 @@ export function operate(numberOne, numberTwo, operation) {
   let result = 0;
   let x;
   let y;
-  if(numberOne != null) {
+  if (numberOne != null) {
     x = new Big(numberOne);
   }
 
-  if(numberTwo != null) {
+  if (numberTwo != null) {
     y = new Big(numberTwo);
   }
   switch (operation) {

@@ -3,28 +3,35 @@ import PropTypes from 'prop-types';
 import { calculate } from '../logic/calculate';
 
 function Display(props) {
+  const { operation, numberDisplay } = props;
   return (
     <div id="Display">
-      <span className="display-content">{ props.operation }</span>
-      <span className="display-content">{ props.numberDisplay }</span>
+      <span className="display-content">{ operation }</span>
+      <span className="display-content">{ numberDisplay == null ? '0' : numberDisplay }</span>
     </div>
   );
 }
 
 Display.propTypes = {
   numberDisplay: PropTypes.string,
+  operation: PropTypes.string,
 };
 
 Display.defaultProps = {
   numberDisplay: '0',
+  operation: '',
 };
 
 function Button(props) {
-  const { buttonName, color, wide } = props;
+  const {
+    buttonName, color, wide, onClick,
+  } = props;
   return (
-    <button type="button" 
-    className={`${color}-background all-buttons${wide ? ' wide-button' : ' regular-button'}`}
-    onClick={props.onClick}>
+    <button
+      type="button"
+      className={`${color}-background all-buttons${wide ? ' wide-button' : ' regular-button'}`}
+      onClick={onClick}
+    >
       { buttonName }
     </button>
   );
@@ -34,6 +41,7 @@ Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  onClick: PropTypes.func.isRequired,
 };
 
 Button.defaultProps = {
@@ -69,13 +77,17 @@ function ButtonPanel(props) {
         <Button buttonName="+" onClick={() => props.onClick('+')} />
       </div>
       <div className="button-group">
-        <Button buttonName="0" color="lightgray" wide={true} onClick={() => props.onClick('0')} />
+        <Button buttonName="0" color="lightgray" wide onClick={() => props.onClick('0')} />
         <Button buttonName="." color="lightgray" onClick={() => props.onClick('.')} />
         <Button buttonName="=" onClick={() => props.onClick('=')} />
       </div>
     </div>
   );
 }
+
+ButtonPanel.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
 
 export class App extends React.Component {
   constructor(props) {
@@ -90,14 +102,16 @@ export class App extends React.Component {
   handleClick(buttonName) {
     let calcObject = this.state;
     calcObject = calculate(calcObject, buttonName);
-    this.setState(calcObject);
+    const { total, next, operation } = calcObject;
+    this.setState({ total, next, operation });
   }
 
   render() {
+    const { next, operation } = this.state;
     return (
       <div id="App">
-        <Display numberDisplay={this.state.next} operation={this.state.operation}/>
-        <ButtonPanel onClick={ buttonName => this.handleClick(buttonName) }/>
+        <Display numberDisplay={next} operation={operation} />
+        <ButtonPanel onClick={buttonName => this.handleClick(buttonName)} />
       </div>
     );
   }
