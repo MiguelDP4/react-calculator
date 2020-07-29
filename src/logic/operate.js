@@ -2,8 +2,15 @@ const Big = require('big.js');
 
 export function operate(numberOne, numberTwo, operation) {
   let result = 0;
-  const x = new Big(numberOne);
-  const y = new Big(numberTwo);
+  let x;
+  let y;
+  if(numberOne != null) {
+    x = new Big(numberOne);
+  }
+
+  if(numberTwo != null) {
+    y = new Big(numberTwo);
+  }
   switch (operation) {
     case '+':
       result = y.plus(x);

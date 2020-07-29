@@ -17,20 +17,36 @@ export function calculate(calculator, buttonName) {
     case '8':
     case '9':
     case '0':
-      newCalc.next += buttonName;
+      if(newCalc.next == null)
+        newCalc.next = buttonName;
+      else
+        newCalc.next += buttonName;
       break;
     case '+':
     case '-':
     case 'x':
     case '÷':
+      if(newCalc.total == null) {
+        newCalc.total = newCalc.next;
+      } else {
+        newCalc.total = operate(newCalc.next, newCalc.total, newCalc.operation);
+      }
+      newCalc.next = null;
       newCalc.operation = buttonName;
       break;
     case '%':
     case '+/-':
-      newCalc.next = String(operate(newCalc.next, newCalc.total, newCalc.operation));
+      newCalc.next = String(operate(newCalc.next, newCalc.total, buttonName));
       break;
     case '=':
-      newCalc.total = operate(newCalc.next, newCalc.total, newCalc.operation);
+      newCalc.next = String(operate(newCalc.next, newCalc.total, newCalc.operation));
+      newCalc.total = null;
+      newCalc.operation = null;
+      break;
+    case 'AC':
+      newCalc.next = null;
+      newCalc.total = null;
+      newCalc.operation = null;
       break;
     default:
       return 'error';
