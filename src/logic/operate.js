@@ -1,4 +1,4 @@
-import Big from './big.mjs'; // eslint-disable-line import/extensions
+const Big = require('big.js');
 
 export function operate(numberOne, numberTwo, operation) {
   let result = 0;
@@ -6,22 +6,22 @@ export function operate(numberOne, numberTwo, operation) {
   const y = new Big(numberTwo);
   switch (operation) {
     case '+':
-      result = y + x;
+      result = y.plus(x);
       break;
     case '-':
-      result = y - x;
+      result = y.minus(x);
       break;
     case 'x':
-      result = y * x;
+      result = y.times(x);
       break;
     case '÷':
-      result = y / x;
+      result = y.div(x);
       break;
     case '%':
-      result = x / 100;
+      result = x.div(100);
       break;
     case '+/-':
-      result = x * -1;
+      result = x.times(-1);
       break;
     default:
       result = 0;
