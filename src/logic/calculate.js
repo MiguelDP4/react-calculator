@@ -21,9 +21,9 @@ export function calculate(calculator, buttonName) {
       else newCalc.next += buttonName;
       break;
     case '.':
-      if (newCalc.next == null){
-        newCalc.next = '0.'
-      } else if(!newCalc.next.includes('.')){
+      if (newCalc.next == null) {
+        newCalc.next = '0.';
+      } else if (!newCalc.next.includes('.')) {
         newCalc.next += buttonName;
       }
       break;
