@@ -1,7 +1,12 @@
-import operate from './operate';
+import { operate } from './operate';
 
-export function calculate (calculator, buttonName) {
-  switch(buttonName) {
+export function calculate(calculator, buttonName) {
+  const newCalc = {
+    next: calculator.next,
+    total: calculator.total,
+    operation: calculator.operation,
+  };
+  switch (buttonName) {
     case '1':
     case '2':
     case '3':
@@ -12,24 +17,25 @@ export function calculate (calculator, buttonName) {
     case '8':
     case '9':
     case '0':
-      calculator.next += buttonName;
-    break;
+      newCalc.next += buttonName;
+      break;
     case '+':
     case '-':
     case 'x':
     case '÷':
-      calculator.operation = buttonName;
-    break;
+      newCalc.operation = buttonName;
+      break;
     case '%':
     case '+/-':
-      calculator.next = String(operate(calculator.next, calculator.total, calculator.operation));
-    break;
+      newCalc.next = String(operate(newCalc.next, newCalc.total, newCalc.operation));
+      break;
     case '=':
-      calculator.total = operate(calculator.next, calculator.total, calculator.operation);
+      newCalc.total = operate(newCalc.next, newCalc.total, newCalc.operation);
       break;
     default:
-      alert('You are doing something wrong');  
+      return 'error';
   }
-};
+  return newCalc;
+}
 
 export default { calculate };
