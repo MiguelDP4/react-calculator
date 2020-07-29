@@ -1,3 +1,14 @@
+## React Calculator
+
+This project was created as part of the microverse curriculum to practice and learn react.
+
+## Built With
+
+- JavaScript
+- React
+- HTML
+- CSS
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -11,11 +22,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
@@ -37,32 +43,30 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Author
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+👤 **Miguel Dubois**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Github: [@MiguelDP4](https://github.com/MiguelDP4)
+- Twitter: [@Mike_DP4](https://twitter.com/Mike_DP4)
+- LinkedIn [Miguel Dubois](https://www.linkedin.com/in/miguel-angel-dubois)
 
-### Code Splitting
+## Live Demo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+You can check a demo version of the project in [this link](https://react-calculator-987465132.herokuapp.com/).
 
-### Analyzing the Bundle Size
+### Demo images
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Coming soon.
 
-### Making a Progressive Web App
+# 🤝 Contributing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This project is for learning purposes only, I wont accept contributions, though suggestions are welcome.
 
-### Advanced Configuration
+## Show your support
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Give a ⭐️ if you like this project!
 
-### Deployment
+## Acknowledgments
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- I thank microverse for this amazing learning opportunity.
