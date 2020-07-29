@@ -20,6 +20,13 @@ export function calculate(calculator, buttonName) {
       if (newCalc.next == null) newCalc.next = buttonName;
       else newCalc.next += buttonName;
       break;
+    case '.':
+      if (newCalc.next == null){
+        newCalc.next = '0.'
+      } else if(!newCalc.next.includes('.')){
+        newCalc.next += buttonName;
+      }
+      break;
     case '+':
     case '-':
     case 'x':
@@ -47,7 +54,14 @@ export function calculate(calculator, buttonName) {
       newCalc.operation = null;
       break;
     default:
-      return 'error';
+      if (newCalc.total == null) {
+        newCalc.total = newCalc.next;
+      } else {
+        newCalc.total = operate(newCalc.next, newCalc.total, '+');
+      }
+      newCalc.next = null;
+      newCalc.operation = buttonName;
+      break;
   }
   return newCalc;
 }
