@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'seven_segmentregular';
   src:
-    url('./components/fonts/seven_segment-webfont.woff2') format('woff2'),
-    url('./components/fonts/seven_segment-webfont.woff') format('woff');
+    url('./fonts/seven_segment-webfont.woff2') format('woff2'),
+    url('./fonts/seven_segment-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
