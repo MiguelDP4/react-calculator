@@ -3,7 +3,10 @@ import PropTypes from 'prop-types';
 
 function Display(props) {
   const { numberDisplay } = props;
-  return (<div>{ numberDisplay }</div>);
+  return (<div id="Display">
+    <span className="display-content"></span>
+    <span className="display-content">{ numberDisplay }</span>
+  </div>);
 }
 
 Display.propTypes = {
@@ -15,45 +18,54 @@ Display.defaultProps = {
 };
 
 function Button(props) {
-  const { buttonName } = props;
-  return (<button type="button">{ buttonName }</button>);
+  const { buttonName, color, wide } = props;
+  return (
+  <button type="button" className={ color + '-background' +' all-buttons' + (wide ? ' wide-button' : ' regular-button') }>
+    { buttonName }
+  </button>);
 }
 
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
+  buttonClass: PropTypes.string,
+};
+
+Button.defaultProps = {
+  color: 'default',
+  wide: false,
 };
 
 function ButtonPanel() {
   return (
-    <div>
-      <div className="buttonGroup">
-        <Button buttonName="AC" />
-        <Button buttonName="+/-" />
+    <div id="ButtonPanel">
+      <div className="button-group">
+        <Button buttonName="AC" color="red" />
+        <Button buttonName="+/-"/>
         <Button buttonName="%" />
         <Button buttonName="÷" />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="7" />
-        <Button buttonName="8" />
-        <Button buttonName="9" />
-        <Button buttonName="X" />
+      <div className="button-group">
+        <Button buttonName="7" color="lightgray" />
+        <Button buttonName="8" color="lightgray" />
+        <Button buttonName="9" color="lightgray" />
+        <Button buttonName="x" />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="4" />
-        <Button buttonName="5" />
-        <Button buttonName="6" />
-        <Button buttonName="-" />
+      <div className="button-group">
+        <Button buttonName="4" color="lightgray" />
+        <Button buttonName="5" color="lightgray" />
+        <Button buttonName="6" color="lightgray" />
+        <Button buttonName="-"  />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="1" />
-        <Button buttonName="2" />
-        <Button buttonName="3" />
-        <Button buttonName="+" />
+      <div className="button-group">
+        <Button buttonName="1" color="lightgray" />
+        <Button buttonName="2" color="lightgray" />
+        <Button buttonName="3" color="lightgray" />
+        <Button buttonName="+"  />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="0" />
-        <Button buttonName="." />
-        <Button buttonName="=" />
+      <div className="button-group">
+        <Button buttonName="0" color="lightgray" wide="true" />
+        <Button buttonName="." color="lightgray" />
+        <Button buttonName="="  />
       </div>
     </div>
   );
@@ -61,7 +73,7 @@ function ButtonPanel() {
 
 export function App() {
   return (
-    <div className="App" id="CalculatorApplication">
+    <div id="App">
       <Display />
       <ButtonPanel />
     </div>
