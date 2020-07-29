@@ -35,7 +35,6 @@ export function calculate(calculator, buttonName) {
     default:
       return 'error';
   }
-  console.log(newCalc);
   return newCalc;
 }
 

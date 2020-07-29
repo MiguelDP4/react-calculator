@@ -7,7 +7,7 @@ function Display(props) {
   // The next line is to use the calculate function and
   // to remove the linter error, because the calculate
   // function is not being used yet
-  numberDisplay = String(calculate({next: '1', total: '1', operation:'-',}, '=').total);
+  numberDisplay = String(calculate({ next: '1', total: '1', operation: '-' }, '=').total);
   return (
     <div id="Display">
       <span className="display-content" />
