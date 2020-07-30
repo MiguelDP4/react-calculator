@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
+import PropTypes from 'prop-types';
 
 export function ButtonPanel(props) {
   return (
