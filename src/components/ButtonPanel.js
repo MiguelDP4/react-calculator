@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from './Button';
 import PropTypes from 'prop-types';
+import { Button } from './Button';
 
 export function ButtonPanel(props) {
   return (
@@ -41,6 +41,5 @@ export function ButtonPanel(props) {
 ButtonPanel.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
-
 
 export default { ButtonPanel };
