@@ -41,5 +41,4 @@ export function ButtonPanel(props) {
 ButtonPanel.propTypes = {
   onClick: PropTypes.func.isRequired,
 };
-
 export default { ButtonPanel };
