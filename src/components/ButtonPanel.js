@@ -5,9 +5,9 @@ export function ButtonPanel() {
   return (
     <div id="ButtonPanel">
       <div className="button-group">
-        <Button buttonName="AC" color="red" />
-        <Button buttonName="+/-" />
-        <Button buttonName="%" />
+        <Button buttonName="AC" color="lightgray" />
+        <Button buttonName="+/-" color="lightgray" />
+        <Button buttonName="%" color="lightgray" />
         <Button buttonName="÷" />
       </div>
       <div className="button-group">
