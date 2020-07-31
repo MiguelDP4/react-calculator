@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 
 export function Display(props) {
   const { numberDisplay } = props;
-  return (<div>{ numberDisplay }</div>);
+  return (
+    <div id="Display">
+      <span className="display-content" />
+      <span className="display-content">{ numberDisplay }</span>
+    </div>
+  );
 }
 
 Display.propTypes = {

@@ -3,34 +3,34 @@ import { Button } from './Button';
 
 export function ButtonPanel() {
   return (
-    <div>
-      <div className="buttonGroup">
-        <Button buttonName="AC" />
-        <Button buttonName="+/-" />
-        <Button buttonName="%" />
+    <div id="ButtonPanel">
+      <div className="button-group">
+        <Button buttonName="AC" color="lightgray" />
+        <Button buttonName="+/-" color="lightgray" />
+        <Button buttonName="%" color="lightgray" />
         <Button buttonName="÷" />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="7" />
-        <Button buttonName="8" />
-        <Button buttonName="9" />
-        <Button buttonName="X" />
+      <div className="button-group">
+        <Button buttonName="7" color="lightgray" />
+        <Button buttonName="8" color="lightgray" />
+        <Button buttonName="9" color="lightgray" />
+        <Button buttonName="x" />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="4" />
-        <Button buttonName="5" />
-        <Button buttonName="6" />
+      <div className="button-group">
+        <Button buttonName="4" color="lightgray" />
+        <Button buttonName="5" color="lightgray" />
+        <Button buttonName="6" color="lightgray" />
         <Button buttonName="-" />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="1" />
-        <Button buttonName="2" />
-        <Button buttonName="3" />
+      <div className="button-group">
+        <Button buttonName="1" color="lightgray" />
+        <Button buttonName="2" color="lightgray" />
+        <Button buttonName="3" color="lightgray" />
         <Button buttonName="+" />
       </div>
-      <div className="buttonGroup">
-        <Button buttonName="0" />
-        <Button buttonName="." />
+      <div className="button-group">
+        <Button buttonName="0" color="lightgray" wide="true" />
+        <Button buttonName="." color="lightgray" />
         <Button buttonName="=" />
       </div>
     </div>

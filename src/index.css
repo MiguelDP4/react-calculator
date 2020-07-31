@@ -1,3 +1,98 @@
+@font-face {
+  font-family: 'seven_segmentregular';
+  src:
+    url('./fonts/seven_segment-webfont.woff2') format('woff2'),
+    url('./fonts/seven_segment-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   font-family: 'Roboto', sans-serif;
+  width: 700px;
+  margin: 0 auto;
+}
+
+#App {
+  display: flex;
+  flex-direction: column;
+}
+
+#Display {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+  height: 100px;
+  font-family: 'seven_segmentregular', sans-serif;
+  font-size: 1.8em;
+}
+
+#ButtonPanel {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-content {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.button-group {
+  height: 100px;
+}
+
+.all-buttons {
+  height: 100%;
+  border-color: gray;
+  border-width: 1px;
+  font-size: 1.4em;
+}
+
+.default-background {
+  background-color: orange;
+}
+
+.default-background:hover {
+  background-color: rgb(207, 135, 0);
+}
+
+.default-background:active {
+  background-color: rgb(167, 108, 0);
+}
+
+.lightgray-background {
+  background-color: lightgray;
+}
+
+.lightgray-background:hover {
+  background-color: rgb(185, 185, 185);
+}
+
+.lightgray-background:active {
+  background-color: rgb(138, 138, 138);
+}
+
+.red-background {
+  background-color: rgb(121, 35, 35);
+  color: white;
+}
+
+.red-background:hover {
+  background-color: rgb(167, 32, 32);
+}
+
+.red-background:active {
+  background-color: rgb(163, 17, 17);
+}
+
+.regular-button {
+  width: 25%;
+}
+
+.wide-button {
+  width: 50%;
 }
